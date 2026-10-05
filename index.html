@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn about distracted driving, try the SafeWays quiz, and plan a more focused drive." />
+    <title>Learn More | SafeWays</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="campaign.html" aria-label="SafeWays campaign home">
+          <span class="brand-mark" aria-hidden="true">↗</span>
+          <span>
+            <span class="brand-name">SafeWays</span>
+            <span class="brand-description">University driving campaign</span>
+          </span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="campaign.html">The campaign</a></li>
+            <li><a href="index.html" aria-current="page">Learn more</a></li>
+            <li><a href="#drive-ready">Before you drive</a></li>
+            <li><a href="#resources">Resources</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="campaign.html">Home</a></li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page">Learn more</li>
+            </ol>
+          </nav>
+
+          <div class="hero-layout">
+            <div>
+              <p class="eyebrow">Awareness starts here</p>
+              <h1 id="page-title">A little distraction.<br />A lot to miss.</h1>
+              <p class="hero-description">
+                A commute to class. A drive back to campus. A trip home.
+                Wherever you’re headed, give the road your attention.
+                Learn what distraction looks like, then put your knowledge to the test.
+              </p>
+              <a class="button" href="#quiz">Try the quick quiz <span aria-hidden="true">→</span></a>
+            </div>
+            <nav class="page-guide" aria-label="On this page">
+              <p class="eyebrow">On this page</p>
+              <a href="#distractions"><span>01</span> Understand the risks</a>
+              <a href="#quiz"><span>02</span> Check your knowledge</a>
+              <a href="#drive-ready"><span>03</span> Plan your next drive</a>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="distractions" aria-labelledby="distractions-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">01 / Understand the risks</p>
+            <h2 id="distractions-title">Distraction goes beyond your phone.</h2>
+            <p>Our campaign looks at four ways your attention can shift away from driving. One activity can involve more than one.</p>
+          </div>
+
+          <div class="distraction-grid">
+            <article class="distraction-card">
+              <p class="card-category"><span class="category-number" aria-hidden="true">01</span> Visual</p>
+              <h3>Eyes off the road.</h3>
+              <p>Looking away from the road can mean missing something ahead.</p>
+              <ul>
+                <li>Glancing at a phone screen</li>
+                <li>Turning to look at scenery</li>
+                <li>Looking back at passengers</li>
+              </ul>
+            </article>
+
+            <article class="distraction-card">
+              <p class="card-category"><span class="category-number" aria-hidden="true">02</span> Manual</p>
+              <h3>Hands away from driving.</h3>
+              <p>Other tasks can compete with the hands you need to control your car.</p>
+              <ul>
+                <li>Reaching for something in the car</li>
+                <li>Eating or drinking</li>
+                <li>Adjusting the radio or navigation</li>
+              </ul>
+            </article>
+
+            <article class="distraction-card">
+              <p class="card-category"><span class="category-number" aria-hidden="true">03</span> Cognitive</p>
+              <h3>Mind somewhere else.</h3>
+              <p>Attention can drift even when you’re looking straight ahead.</p>
+              <ul>
+                <li>Daydreaming</li>
+                <li>Getting absorbed in a conversation</li>
+                <li>Focusing on worries instead of the drive</li>
+              </ul>
+            </article>
+
+            <article class="distraction-card">
+              <p class="card-category"><span class="category-number" aria-hidden="true">04</span> Auditory</p>
+              <h3>Sounds competing for attention.</h3>
+              <p>Competing sounds can make it harder to focus on driving.</p>
+              <ul>
+                <li>High-volume music</li>
+                <li>Repeated phone notifications</li>
+                <li>Loud, competing conversations</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="attention-note" aria-labelledby="attention-title">
+            <h3 id="attention-title">One action. Several distractions.</h3>
+            <p>Reading or typing a message can occupy your eyes, hands, and thoughts at once. Keep your focus on the drive.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section quiz-section" id="quiz" aria-labelledby="quiz-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">02 / Check your knowledge</p>
+            <h2 id="quiz-title">What would you do?</h2>
+            <p>Three everyday situations. Choose one answer for each, then see the explanations. Take the quiz while safely parked.</p>
+          </div>
+
+          <form id="quiz-form" novalidate>
+            <div class="quiz-grid">
+              <div class="quiz-card" data-answer="parked" data-explanation="Wait until you have parked in a safe place before reading or replying to a message.">
+                <fieldset aria-describedby="feedback-1">
+                  <legend><span class="question-number">Question 01</span>A message arrives while you’re driving. What should you do?</legend>
+                  <label class="answer"><input type="radio" name="question-1" value="red-light" /><span>Read it at the next red light.</span></label>
+                  <label class="answer"><input type="radio" name="question-1" value="parked" /><span>Wait until you’re safely parked.</span></label>
+                  <label class="answer"><input type="radio" name="question-1" value="reply" /><span>Send a quick reply with one hand.</span></label>
+                </fieldset>
+                <p class="feedback" id="feedback-1"></p>
+              </div>
+
+              <div class="quiz-card" data-answer="texting" data-explanation="Texting can divert your eyes, occupy your hands, and shift your thoughts away from driving.">
+                <fieldset aria-describedby="feedback-2">
+                  <legend><span class="question-number">Question 02</span>Which action can distract your eyes, hands, and mind at the same time?</legend>
+                  <label class="answer"><input type="radio" name="question-2" value="route" /><span>Setting your route before leaving.</span></label>
+                  <label class="answer"><input type="radio" name="question-2" value="phone-away" /><span>Putting your phone away before driving.</span></label>
+                  <label class="answer"><input type="radio" name="question-2" value="texting" /><span>Reading or typing a text message.</span></label>
+                </fieldset>
+                <p class="feedback" id="feedback-2"></p>
+              </div>
+
+              <div class="quiz-card" data-answer="before" data-explanation="Choose your route and playlist while parked, so your controls are ready before the trip begins.">
+                <fieldset aria-describedby="feedback-3">
+                  <legend><span class="question-number">Question 03</span>When should you set your route and choose your music?</legend>
+                  <label class="answer"><input type="radio" name="question-3" value="leaving" /><span>While leaving the parking lot.</span></label>
+                  <label class="answer"><input type="radio" name="question-3" value="before" /><span>Before you start driving.</span></label>
+                  <label class="answer"><input type="radio" name="question-3" value="open-road" /><span>When you reach an open stretch of road.</span></label>
+                </fieldset>
+                <p class="feedback" id="feedback-3"></p>
+              </div>
+            </div>
+
+            <div class="quiz-actions" id="quiz-actions" hidden>
+              <button class="button" type="submit">Check my answers</button>
+              <button class="button button-secondary" type="reset">Start again</button>
+              <p class="quiz-result" id="quiz-result" role="status">Choose one answer for each question.</p>
+            </div>
+            <noscript>
+              <p class="no-script-note">Turn on JavaScript to check your answers, or open the answer key below.</p>
+              <details class="answer-key">
+                <summary>Read the answer key</summary>
+                <ol>
+                  <li>Wait until you’re safely parked before reading or replying.</li>
+                  <li>Reading or typing a text message can distract your eyes, hands, and mind.</li>
+                  <li>Set your route and music before you start driving.</li>
+                </ol>
+              </details>
+            </noscript>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="drive-ready" aria-labelledby="drive-ready-title">
+        <div class="container checklist-layout">
+          <div class="section-heading">
+            <p class="eyebrow">03 / Plan your next drive</p>
+            <h2 id="drive-ready-title">Good habits start before you leave.</h2>
+            <p>Pick the steps you’ll take before your next trip, whether you’re heading to class, work, or home.</p>
+            <p class="checklist-status" id="checklist-status" role="status" hidden>0 of 4 habits planned.</p>
+          </div>
+          <div class="drive-checklist" role="group" aria-labelledby="drive-ready-title">
+            <label><input type="checkbox" name="driving-habits" value="notifications" /><span>Silence notifications or turn on Do Not Disturb.</span></label>
+            <label><input type="checkbox" name="driving-habits" value="route" /><span>Set your route and playlist while parked.</span></label>
+            <label><input type="checkbox" name="driving-habits" value="phone" /><span>Put your phone somewhere you won’t be tempted to reach for it.</span></label>
+            <label><input type="checkbox" name="driving-habits" value="passenger" /><span>If you have a passenger, ask them to handle messages.</span></label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section resources-section" id="resources" aria-labelledby="resources-title">
+        <div class="container resources-layout">
+          <div class="section-heading">
+            <p class="eyebrow">Keep learning</p>
+            <h2 id="resources-title">Take a closer look.</h2>
+            <p>Explore the campaign infographic or find practical advice from road safety resources.</p>
+            <ul class="resource-links">
+              <li><a href="https://www.nhtsa.gov/risky-driving/distracted-driving">NHTSA: understanding distracted driving <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.tdi.texas.gov/tips/safety/driving-distractions.html">Texas Department of Insurance: driving tips <span aria-hidden="true">↗</span></a></li>
+              <li><a href="riskinfograph.png" download>Download the campaign infographic (PNG) <span aria-hidden="true">↓</span></a></li>
+            </ul>
+          </div>
+          <details class="infographic">
+            <summary>View the campaign infographic</summary>
+            <figure>
+              <img src="riskinfograph.png" width="800" height="2000" loading="lazy" alt="SafeWays infographic describing cognitive, visual, manual, and auditory distractions. These categories are also explained above." />
+              <figcaption>The campaign’s four ways of thinking about distraction.</figcaption>
+            </figure>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div>
+          <a class="footer-brand" href="campaign.html">SafeWays<span aria-hidden="true">.</span></a>
+          <p>For students, alumni, faculty, and everyone on the road.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <ul class="footer-links">
+            <li><a href="campaign.html">The campaign</a></li>
+            <li><a href="#quiz">Quick quiz</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#top">Back to top ↑</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container footer-note">Academic mockup · University driving awareness campaign</div>
+    </footer>
+  </body>
+</html>

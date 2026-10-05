@@ -1,0 +1,658 @@
+/* Shared colors and the basic page layout. */
+:root {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --blue: #214f6b;
+  --blue-dark: #173c53;
+  --orange: #ca7445;
+  --orange-dark: #97431e;
+  --beige: #f6f2ea;
+  --pale-blue: #edf3f6;
+  --white: #ffffff;
+  --text: #25343c;
+  --muted: #58656c;
+  --line: #d7dee0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--white);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3, p, figure {
+  margin: 0;
+}
+h1, h2, h3 {
+  line-height: 1.2;
+}
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+h3 {
+  font-size: 1.25rem;
+}
+a {
+  color: var(--blue);
+  text-underline-offset: 0.25em;
+}
+a:hover {
+  color: var(--blue-dark);
+}
+button, input {
+  font: inherit;
+}
+button, summary {
+  cursor: pointer;
+}
+input {
+  accent-color: var(--blue);
+}
+[hidden] {
+  display: none !important;
+}
+:focus-visible {
+  outline: 3px solid var(--orange-dark);
+  outline-offset: 4px;
+}
+section[id], main[id] {
+  scroll-margin-top: 1.5rem;
+}
+
+.container {
+  width: min(1120px, 100% - 3rem);
+  margin: 0 auto;
+}
+.section {
+  padding: 4.5rem 0;
+}
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+.section-heading > p:not(.eyebrow) {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+.eyebrow {
+  margin-bottom: 0.85rem;
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* Header, working navigation, and a keyboard skip link. */
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10;
+  padding: 0.65rem 1rem;
+  color: var(--white);
+  background: var(--blue);
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+  color: var(--white);
+}
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.25rem 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  color: var(--white);
+  background: var(--blue);
+  font-size: 1.65rem;
+}
+.brand-name {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.brand-description {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+.nav-links, .footer-links, .breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-links a {
+  display: inline-block;
+  padding: 0.4rem 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  color: var(--blue);
+}
+.nav-links a[aria-current="page"] {
+  border-bottom: 2px solid var(--orange);
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* The breadcrumb and page guide identify this as the Learn More page. */
+.hero {
+  padding: 1.5rem 0 4rem;
+  background: var(--beige);
+}
+.breadcrumb {
+  margin-bottom: 3rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.breadcrumb ol {
+  gap: 0.65rem;
+}
+.breadcrumb a {
+  color: var(--muted);
+}
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 4rem;
+}
+.hero h1 {
+  max-width: 700px;
+  color: var(--blue-dark);
+  font-family: var(--font-sans);
+  font-size: clamp(2.65rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+.hero-description {
+  max-width: 600px;
+  margin: 1.5rem 0 1.8rem;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 46px;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+  color: var(--white);
+  background: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  border-color: var(--blue-dark);
+  color: var(--white);
+  background: var(--blue-dark);
+}
+.button-secondary {
+  color: var(--blue);
+  background: transparent;
+}
+.button-secondary:hover {
+  color: var(--blue);
+  background: var(--white);
+}
+.page-guide {
+  border-left: 1px solid #d8d2c7;
+  padding-left: 1.75rem;
+}
+.page-guide a {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.7rem 0;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.page-guide a:hover {
+  text-decoration: underline;
+}
+.page-guide a span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* Distraction cards and a short takeaway. */
+.distraction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.distraction-card {
+  padding: 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.card-category {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.category-number {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--pale-blue);
+  font-size: 0.7rem;
+}
+.distraction-card h3 {
+  margin-bottom: 0.65rem;
+}
+.distraction-card > p:not(.card-category), .distraction-card ul {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.distraction-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+.distraction-card li {
+  padding-left: 0.2rem;
+  margin-top: 0.25rem;
+}
+.distraction-card li::marker {
+  color: var(--orange-dark);
+}
+.attention-note {
+  margin-top: 1.75rem;
+  border-left: 3px solid var(--orange);
+  padding: 1.3rem 1.5rem;
+  background: var(--beige);
+}
+.attention-note h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+.attention-note p {
+  max-width: 800px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Native radio buttons keep the quiz usable with a keyboard. */
+.quiz-section {
+  background: var(--pale-blue);
+}
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.quiz-card {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+.quiz-card fieldset {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.quiz-card legend {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  padding: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.question-number {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.answer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-top: 0.65rem;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.answer:hover {
+  background: var(--pale-blue);
+}
+.answer input, .drive-checklist input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0.15rem 0 0;
+}
+.answer input:checked + span {
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+.feedback {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.feedback:empty {
+  display: none;
+}
+.quiz-card.is-correct {
+  border-color: var(--blue);
+}
+.is-correct .feedback {
+  color: var(--blue);
+}
+.quiz-card.needs-review {
+  border-color: var(--orange-dark);
+}
+.needs-review .feedback {
+  color: var(--orange-dark);
+}
+.quiz-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.75rem;
+}
+.quiz-result {
+  flex-basis: 100%;
+  margin-top: 0.25rem;
+  color: var(--blue-dark);
+  font-size: 0.95rem;
+}
+.no-script-note, .answer-key {
+  margin-top: 1.5rem;
+}
+.answer-key summary {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* A small interactive checklist, followed by useful resources. */
+.checklist-layout, .resources-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 4rem;
+}
+.checklist-layout .section-heading, .resources-layout .section-heading {
+  margin-bottom: 0;
+}
+.section-heading > .checklist-status {
+  display: inline-block;
+  padding: 0.5rem 0.85rem;
+  border-radius: 5px;
+  color: var(--blue);
+  background: var(--pale-blue);
+  font-size: 0.88rem;
+}
+.drive-checklist {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.drive-checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.drive-checklist label + label {
+  border-top: 1px solid var(--line);
+}
+.resources-section {
+  border-top: 1px solid var(--line);
+  background: var(--beige);
+}
+.resource-links {
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.resource-links li + li {
+  margin-top: 0.75rem;
+}
+.resource-links a {
+  font-size: 0.9rem;
+}
+.resource-links a span {
+  margin-left: 0.3rem;
+}
+.infographic {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #d8d2c7;
+  border-radius: 8px;
+  background: var(--white);
+}
+.infographic summary {
+  color: var(--blue);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.infographic summary::marker {
+  color: var(--orange-dark);
+}
+.infographic figure {
+  margin-top: 1.5rem;
+}
+.infographic img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.infographic figcaption {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* Shared footer and the small companion campaign page. */
+.site-footer {
+  color: var(--white);
+  background: var(--blue-dark);
+}
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+.footer-brand {
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 1.65rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.footer-brand span {
+  color: #eca77d;
+}
+.footer-main p {
+  max-width: 340px;
+  margin-top: 0.65rem;
+  color: #dce6ec;
+  font-size: 0.85rem;
+}
+.footer-links {
+  gap: 0.75rem 1.5rem;
+}
+.footer-links a {
+  color: #dce6ec;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.footer-links a:hover, .footer-brand:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+.site-footer :focus-visible {
+  outline-color: #eca77d;
+}
+.footer-note {
+  border-top: 1px solid #486476;
+  padding-top: 1rem;
+  padding-bottom: 1.25rem;
+  color: #dce6ec;
+  font-size: 0.72rem;
+}
+.campaign-hero {
+  padding: 4.5rem 0;
+}
+.campaign-message {
+  padding: 1.8rem;
+  border-left: 3px solid var(--orange);
+  background: var(--white);
+}
+.campaign-message > p:last-child {
+  color: var(--blue-dark);
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.campaign-card {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.campaign-card > p:not(.eyebrow) {
+  margin: 1rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.campaign-card > a {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Keep navigation visible and let the grids stack on smaller screens. */
+@media (max-width: 960px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .hero-layout, .checklist-layout, .resources-layout {
+    gap: 2.5rem;
+  }
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+  .quiz-card {
+    padding: 1.5rem;
+  }
+  .footer-main {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 2rem);
+  }
+  .section {
+    padding: 3rem 0;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  .nav-links {
+    gap: 0.35rem 1.2rem;
+  }
+  .hero {
+    padding-bottom: 3rem;
+  }
+  .breadcrumb {
+    margin-bottom: 2rem;
+  }
+  .hero-layout, .distraction-grid, .checklist-layout, .resources-layout, .campaign-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+  }
+  .page-guide {
+    border-top: 1px solid #d8d2c7;
+    border-left: 0;
+    padding: 1.4rem 0 0;
+  }
+  .page-guide a {
+    padding: 0.4rem 0;
+  }
+  .distraction-card {
+    padding: 1.4rem;
+  }
+  .attention-note {
+    padding: 1.2rem;
+  }
+  .drive-checklist, .infographic {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+  .campaign-hero {
+    padding-top: 3rem;
+  }
+}
